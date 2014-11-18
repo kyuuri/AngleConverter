@@ -1,8 +1,5 @@
-import Controller.AngleController;
-import View.AngleConverterView;
-import net.webservicex.AngleUnit;
-import net.webservicex.AngleUnitSoap;
-import net.webservicex.Angles;
+import ku.angle.controller.AngleController;
+import ku.angle.view.AngleConverterView;
 
 /**
  * Main class for creating controller and UI
@@ -17,8 +14,9 @@ public class Main {
 	 * @param args command line argument
 	 */
 	public static void main(String[] args) {
-		AngleController controller = new AngleController();
-		AngleConverterView ui = new AngleConverterView(controller);
+		AngleConverterView ui = new AngleConverterView();
 		ui.run();
+		AngleController controller = new AngleController();
+		ui.setController(controller);
 	}
 }
